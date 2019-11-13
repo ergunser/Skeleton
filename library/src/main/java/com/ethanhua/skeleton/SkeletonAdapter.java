@@ -42,13 +42,14 @@ public class SkeletonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             layout.setShimmerAnimationDuration(mShimmerDuration);
             layout.setShimmerAngle(mShimmerAngle);
             layout.setShimmerColor(mColor);
+            layout.setGradientCenterColorWidth(1);
             layout.startShimmerAnimation();
         }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if(doesArrayOfLayoutsExist()) {
+        if (doesArrayOfLayoutsExist()) {
             return getCorrectLayoutItem(position);
         }
         return super.getItemViewType(position);
@@ -93,7 +94,7 @@ public class SkeletonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public int getCorrectLayoutItem(int position) {
-        if(doesArrayOfLayoutsExist()) {
+        if (doesArrayOfLayoutsExist()) {
             return mLayoutArrayReferences[position % mLayoutArrayReferences.length];
         }
         return mLayoutReference;
