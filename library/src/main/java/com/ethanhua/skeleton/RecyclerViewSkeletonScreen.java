@@ -55,15 +55,15 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         private int mItemResID = R.layout.layout_default_item_skeleton;
         private int[] mItemsResIDArray;
         private int mShimmerColor;
-        private int mShimmerDuration = 1000;
+        private int mShimmerDuration = 2000;
         private int mShimmerAngle = 20;
-        private float mShimmerCenterColorWidth = 0.999f;
+        private float mShimmerCenterColorWidth = 0.0001f;
         private float mShimmerMaskWidth = 0.2f;
         private boolean mFrozen = true;
 
         public Builder(RecyclerView recyclerView) {
             this.mRecyclerView = recyclerView;
-            this.mShimmerColor = ContextCompat.getColor(recyclerView.getContext(), R.color.shimmer_color);
+            this.mShimmerColor = ContextCompat.getColor(recyclerView.getContext(), android.R.color.white);
         }
 
         /**
