@@ -29,6 +29,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         mSkeletonAdapter.setShimmerColor(builder.mShimmerColor);
         mSkeletonAdapter.setShimmerAngle(builder.mShimmerAngle);
         mSkeletonAdapter.setShimmerCenterColorWidth(builder.mShimmerCenterColorWidth);
+        mSkeletonAdapter.setShimmerMaskWidth(builder.mShimmerMaskWidth);
         mSkeletonAdapter.setShimmerDuration(builder.mShimmerDuration);
         mRecyclerViewFrozen = builder.mFrozen;
     }
@@ -57,6 +58,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         private int mShimmerDuration = 1000;
         private int mShimmerAngle = 20;
         private float mShimmerCenterColorWidth = 0.999f;
+        private float mShimmerMaskWidth = 0.2f;
         private boolean mFrozen = true;
 
         public Builder(RecyclerView recyclerView) {
@@ -112,6 +114,14 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
          */
         public Builder setShimmerCenterColorWidth(float shimmerCenterColorWidth) {
             this.mShimmerCenterColorWidth = shimmerCenterColorWidth;
+            return this;
+        }
+
+        /**
+         * @param shimmerMaskWidth the shimmer mask width
+         */
+        public Builder setShimmerMaskWidth(float shimmerMaskWidth) {
+            this.mShimmerMaskWidth = shimmerMaskWidth;
             return this;
         }
 
