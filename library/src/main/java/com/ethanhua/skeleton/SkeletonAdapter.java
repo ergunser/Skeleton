@@ -20,6 +20,7 @@ public class SkeletonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private boolean mShimmer;
     private int mShimmerDuration;
     private int mShimmerAngle;
+    private float mShimmerCenterColorWidth;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,7 +43,7 @@ public class SkeletonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             layout.setShimmerAnimationDuration(mShimmerDuration);
             layout.setShimmerAngle(mShimmerAngle);
             layout.setShimmerColor(mColor);
-            layout.setGradientCenterColorWidth(1);
+            layout.setGradientCenterColorWidth(mShimmerCenterColorWidth);
             layout.startShimmerAnimation();
         }
     }
@@ -91,6 +92,10 @@ public class SkeletonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public void setShimmerAngle(@IntRange(from = 0, to = 30) int shimmerAngle) {
         this.mShimmerAngle = shimmerAngle;
+    }
+
+    public void setShimmerCenterColorWidth(float shimmerCenterColorWidth) {
+        this.mShimmerCenterColorWidth = shimmerCenterColorWidth;
     }
 
     public int getCorrectLayoutItem(int position) {
